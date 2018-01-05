@@ -11,6 +11,7 @@
 		082CBE301FFF29BB005DBF16 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082CBE2F1FFF29BB005DBF16 /* Books.swift */; };
 		082CBE341FFF3AEB005DBF16 /* BestSellerListName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082CBE331FFF3AEB005DBF16 /* BestSellerListName.swift */; };
 		082CBE361FFF4F7D005DBF16 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082CBE351FFF4F7D005DBF16 /* BookCell.swift */; };
+		082CBE381FFF7300005DBF16 /* BookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082CBE371FFF7300005DBF16 /* BookVC.swift */; };
 		082DF1421FFD58E60025A8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DF1411FFD58E60025A8D4 /* AppDelegate.swift */; };
 		082DF1441FFD58E60025A8D4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DF1431FFD58E60025A8D4 /* MainVC.swift */; };
 		082DF1471FFD58E60025A8D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082DF1451FFD58E60025A8D4 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		082CBE2F1FFF29BB005DBF16 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		082CBE331FFF3AEB005DBF16 /* BestSellerListName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerListName.swift; sourceTree = "<group>"; };
 		082CBE351FFF4F7D005DBF16 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		082CBE371FFF7300005DBF16 /* BookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookVC.swift; sourceTree = "<group>"; };
 		082DF13E1FFD58E60025A8D4 /* NYTimes Bestseller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTimes Bestseller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		082DF1411FFD58E60025A8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		082DF1431FFD58E60025A8D4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				082DF1431FFD58E60025A8D4 /* MainVC.swift */,
 				08A999AA1FFE195F00A48D8B /* BookDetailVC.swift */,
+				082CBE371FFF7300005DBF16 /* BookVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				08A999AD1FFE1FDF00A48D8B /* BookListService.swift in Sources */,
 				08A999B21FFEBCA800A48D8B /* BookListTypeCell.swift in Sources */,
 				082DF17B1FFD8B780025A8D4 /* MaterialView.swift in Sources */,
+				082CBE381FFF7300005DBF16 /* BookVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

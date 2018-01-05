@@ -26,6 +26,7 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     func initBooks() {
         DispatchQueue.main.async {
             BookDetailService.instance.downloadBestSellerBooks{_ in
+                self.bookCollection.reloadData()
             }
         }
         navigationItem.title = bestSellerList
@@ -43,5 +44,11 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         }
         return BookCell()
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let book = BookDetailService.instance.book[indexPath.row]
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let bookVC = mainStoryboard.instantiateViewController(withIdentifier: "bookVC") as! BookVC
+        self.navigationController?.pushViewController(bookVC, animated: true)
+        bookVC.selectedBooks = book
+    }
 }

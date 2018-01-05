@@ -18,7 +18,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         initBooks()
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     func initBooks() {
         DispatchQueue.main.async {
             BookListService.instance.downloadBestSellerBookList{_ in
