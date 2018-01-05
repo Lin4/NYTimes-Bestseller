@@ -13,9 +13,7 @@ class BookListTypeCell: UITableViewCell {
     @IBOutlet weak var bestSellerListImg: UIImageView!
     @IBOutlet weak var bestSellerListLbl: UILabel!
     
-    
     func configureCell(bookList: bookLists) {
-        
         bestSellerListImg.image = UIImage(named: bookList.displayListName.removingWhitespaces())
         bestSellerListLbl.text = bookList.displayListName
     }

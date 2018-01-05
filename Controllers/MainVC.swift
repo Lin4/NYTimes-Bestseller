@@ -16,17 +16,21 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        BookListService.instance.downloadBestSellerBookList{_ in
-            self.tableView.reloadData()
-        }
+        initBooks()
     }
 
+    func initBooks() {
+        DispatchQueue.main.async {
+            BookListService.instance.downloadBestSellerBookList{_ in
+                self.tableView.reloadData()
+            }
+        }
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
         return BookListService.instance.bestSellerLists.count
     }
     
@@ -41,19 +45,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+         let category = BookListService.instance.bestSellerLists[indexPath.row]
+        BestSellerListName.instance.bestSellerListName = category.bookListName
             performSegue(withIdentifier: "BookDetailsVC", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BookDetailsVC" {
-            if let destination = segue.destination as? BookDetailVC {
-                if let book = sender as? Books {
-                    destination.bookToEdit = book
-                }
-            }
+             let destination = segue.destination as? BookDetailVC
+            destination?.bestSellerList = BestSellerListName.instance.bestSellerListName
         }
-        
     }
 }
 

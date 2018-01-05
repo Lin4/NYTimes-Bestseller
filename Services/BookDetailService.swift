@@ -18,19 +18,22 @@ class BookDetailService {
         Alamofire.request(URL_GET_BEST_SELLERS_LIST_DETAILS).responseJSON { (response) in
             if ((response.result.value) != nil) {
                 let data = JSON(response.result.value!)
-                if let bookArray = data["books"].array{
+                let results = data["results"].dictionary
+                if let bookArray = results!["books"]?.array {
                     for bestSellerBooks in bookArray {
                         let title = bestSellerBooks["title"].string
                         let authorName = bestSellerBooks["author"].string
-                        let rank = bestSellerBooks["rank"].int
-                        let weeksOnList = bestSellerBooks["weeks_on_list"].int
+                        let rank = bestSellerBooks["rank"].intValue
+                        let weeksOnList = bestSellerBooks["weeks_on_list"].intValue
                         let description = bestSellerBooks["description"].string
                         let amazonURL = bestSellerBooks["amazon_product_url"].string
                         let reviewURL = bestSellerBooks["book_review_link"].string
                         let boolImageURL = bestSellerBooks["book_image"].string
-                        let sellerLists = books(bookName: title!, authorName: authorName!, rank: rank!, weeksOnList: weeksOnList!, description: description!, amazonURL: amazonURL!, reviewURL: reviewURL!, bookImageURL: boolImageURL!)
+                        let sellerLists = books(bookName: title!, authorName: authorName!, rank: rank, weeksOnList: weeksOnList, description: description!, amazonURL: amazonURL!, reviewURL: reviewURL!, bookImageURL: boolImageURL!)
                         self.book.append(sellerLists)
+                        print("LINGES",sellerLists)
                     }
+                    print("LINGES",self.book)
                     completed(true)
                 }
                 
