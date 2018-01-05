@@ -7,8 +7,12 @@
 //
 
 import Foundation
-struct BookList : Decodable {
-    public private(set) var bookListName: String!
-    public private(set) var displayListName: String!
+struct bookLists: Decodable {
+    private(set) public var bookListName: String!
+    private(set) public var displayListName: String!
    
+    init(bookListName: String, displayListName: String) {
+        self.bookListName = bookListName
+        self.displayListName = displayListName
+    }
 }

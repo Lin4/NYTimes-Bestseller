@@ -7,31 +7,37 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        BookListService.instance.findAllBookListTypes { (success) in
-            
+        BookListService.instance.downloadTravelTimeDataWalk{_ in
+            self.tableView.reloadData()
         }
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return BookListService.instance.bestSellerLists.count
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BestSellerList", for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "BestSellerList", for: indexPath) as? BookListTypeCell {
+            let bestSellerList = BookListService.instance.bestSellerLists[indexPath.row]
+            cell.configureCell(bookList: bestSellerList)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -18,6 +18,7 @@
 		08A999AB1FFE195F00A48D8B /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999AA1FFE195F00A48D8B /* BookDetailVC.swift */; };
 		08A999AD1FFE1FDF00A48D8B /* BookListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999AC1FFE1FDF00A48D8B /* BookListService.swift */; };
 		08A999B01FFE208600A48D8B /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999AF1FFE208600A48D8B /* BookList.swift */; };
+		08A999B21FFEBCA800A48D8B /* BookListTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999B11FFEBCA800A48D8B /* BookListTypeCell.swift */; };
 		8A2C9FBC7F47AB65BE9DCA52 /* Pods_NYTimes_Bestseller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3528ACFF326A490F0525A25A /* Pods_NYTimes_Bestseller.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		08A999AA1FFE195F00A48D8B /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
 		08A999AC1FFE1FDF00A48D8B /* BookListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListService.swift; sourceTree = "<group>"; };
 		08A999AF1FFE208600A48D8B /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
+		08A999B11FFEBCA800A48D8B /* BookListTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTypeCell.swift; sourceTree = "<group>"; };
 		3528ACFF326A490F0525A25A /* Pods_NYTimes_Bestseller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimes_Bestseller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7E2FBB4B3279DA9F38E128 /* Pods-NYTimes Bestseller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes Bestseller.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYTimes Bestseller/Pods-NYTimes Bestseller.release.xcconfig"; sourceTree = "<group>"; };
 		D6926E9E1319B441EAEE7337 /* Pods-NYTimes Bestseller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes Bestseller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYTimes Bestseller/Pods-NYTimes Bestseller.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		082DF1761FFD8B2B0025A8D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				08A999B11FFEBCA800A48D8B /* BookListTypeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				082DF1421FFD58E60025A8D4 /* AppDelegate.swift in Sources */,
 				082DF14A1FFD58E60025A8D4 /* NYTimes_Bestseller.xcdatamodeld in Sources */,
 				08A999AD1FFE1FDF00A48D8B /* BookListService.swift in Sources */,
+				08A999B21FFEBCA800A48D8B /* BookListTypeCell.swift in Sources */,
 				082DF17B1FFD8B780025A8D4 /* MaterialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

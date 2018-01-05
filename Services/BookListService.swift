@@ -13,28 +13,27 @@ import SwiftyJSON
 class BookListService {
     
     static let instance = BookListService()
-    var bookList = [BookList]()
-    func findAllBookListTypes(completion: @escaping CompletionHandler) {
+    
+     var bestSellerLists = [bookLists]()
+    
+    func downloadTravelTimeDataWalk(completed: @escaping CompletionHandler) {
         Alamofire.request(URL_GET_BEST_SELLERS_LIST).responseJSON { (response) in
             if ((response.result.value) != nil) {
                 let data = JSON(response.result.value!)
-                if let list = data["results"].array{
-                    for bookLists in list {
-                        let name = bookLists["list_name"].stringValue
-                        let displayName = bookLists["display_name"].stringValue
-                        let list = BookList(bookListName: name, displayListName: displayName)
-                        self.bookList.append(list)
+                if let listArray = data["results"].array{
+                    for bestSellerList in listArray {
+                        let name = bestSellerList["list_name"].string
+                        let displayName = bestSellerList["display_name"].string
+                        let sellerLists = bookLists(bookListName: name!, displayListName: displayName!)
+                        self.bestSellerLists.append(sellerLists)
                     }
-                    print(self.bookList)
-                    completion(true)
+                    completed(true)
                 }
-               
-            } else {
-                    completion(false)
-                    debugPrint(response.result.error as Any)
+                
             }
+            
         }
     }
-    
 }
+
 

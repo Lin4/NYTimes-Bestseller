@@ -67,7 +67,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BestSellerList" rowHeight="150" id="ffx-1y-W52">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BestSellerList" rowHeight="150" id="ffx-1y-W52" customClass="BookListTypeCell" customModule="NYTimes_Bestseller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffx-1y-W52" id="tGf-KX-6Hr">
@@ -77,7 +77,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc8-iR-9Pv">
                                                     <rect key="frame" x="15" y="11" width="290" height="128"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gone-girl1" translatesAutoresizingMaskIntoConstraints="NO" id="43v-of-aD5">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gone-girl1" translatesAutoresizingMaskIntoConstraints="NO" id="43v-of-aD5">
                                                             <rect key="frame" x="8" y="14" width="100" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="Uxh-pu-exj"/>
@@ -118,6 +118,10 @@
                                                 <constraint firstItem="cc8-iR-9Pv" firstAttribute="bottom" secondItem="tGf-KX-6Hr" secondAttribute="bottomMargin" id="i1Z-yu-czC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bestSellerListImg" destination="43v-of-aD5" id="X1A-QY-ZoT"/>
+                                            <outlet property="bestSellerListLbl" destination="xxD-K7-r2m" id="rNR-iq-po5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -139,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfT-57-ZGa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453.125" y="122.53521126760563"/>
+            <point key="canvasLocation" x="881" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dLz-Pf-tPQ">
@@ -157,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKP-Tn-i7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="123"/>
+            <point key="canvasLocation" x="-1888" y="71"/>
         </scene>
     </scenes>
     <resources>
