@@ -36,11 +36,13 @@
                                     <constraint firstAttribute="height" constant="30" id="4JR-hE-aet"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Best Sellers"/>
+                                    <segment title="Week on Sale"/>
                                     <segment title="By Rank"/>
-                                    <segment title="By Week"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="39J-LH-Zjl" eventType="valueChanged" id="gcb-VA-BBb"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EGc-RZ-eJm">
                                 <rect key="frame" x="0.0" y="134" width="320" height="434"/>
@@ -139,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="bookCollection" destination="EGc-RZ-eJm" id="KdB-mH-lSS"/>
+                        <outlet property="segment" destination="99W-d9-1jW" id="oLi-Oi-q4m"/>
                         <segue destination="l3K-p1-Vnf" kind="show" identifier="toViewBook" id="rN4-48-Yse"/>
                     </connections>
                 </viewController>
@@ -294,7 +297,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BestSellerList" rowHeight="150" id="ffx-1y-W52" customClass="BookListTypeCell" customModule="NYTimes_Bestseller" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BestSellerList" rowHeight="150" id="ffx-1y-W52" customClass="BookListTypeCell" customModule="NYTimes_Bestseller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffx-1y-W52" id="tGf-KX-6Hr">
