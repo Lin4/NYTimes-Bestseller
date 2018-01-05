@@ -16,7 +16,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        BookListService.instance.downloadTravelTimeDataWalk{_ in
+        BookListService.instance.downloadBestSellerBookList{_ in
             self.tableView.reloadData()
         }
     }
@@ -26,8 +26,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
         return BookListService.instance.bestSellerLists.count
-       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

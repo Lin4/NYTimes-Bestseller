@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082CBE2E1FFF294C005DBF16 /* BookDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082CBE2D1FFF294C005DBF16 /* BookDetailService.swift */; };
+		082CBE301FFF29BB005DBF16 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082CBE2F1FFF29BB005DBF16 /* Books.swift */; };
 		082DF1421FFD58E60025A8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DF1411FFD58E60025A8D4 /* AppDelegate.swift */; };
 		082DF1441FFD58E60025A8D4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DF1431FFD58E60025A8D4 /* MainVC.swift */; };
 		082DF1471FFD58E60025A8D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082DF1451FFD58E60025A8D4 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082CBE2D1FFF294C005DBF16 /* BookDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailService.swift; sourceTree = "<group>"; };
+		082CBE2F1FFF29BB005DBF16 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		082DF13E1FFD58E60025A8D4 /* NYTimes Bestseller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTimes Bestseller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		082DF1411FFD58E60025A8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		082DF1431FFD58E60025A8D4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				08A999AC1FFE1FDF00A48D8B /* BookListService.swift */,
+				082CBE2D1FFF294C005DBF16 /* BookDetailService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				08A999AF1FFE208600A48D8B /* BookList.swift */,
+				082CBE2F1FFF29BB005DBF16 /* Books.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 				08A999B01FFE208600A48D8B /* BookList.swift in Sources */,
 				08A999A91FFE08F800A48D8B /* Constants.swift in Sources */,
 				082DF1441FFD58E60025A8D4 /* MainVC.swift in Sources */,
+				082CBE301FFF29BB005DBF16 /* Books.swift in Sources */,
+				082CBE2E1FFF294C005DBF16 /* BookDetailService.swift in Sources */,
 				08A999AB1FFE195F00A48D8B /* BookDetailVC.swift in Sources */,
 				082DF1421FFD58E60025A8D4 /* AppDelegate.swift in Sources */,
 				082DF14A1FFD58E60025A8D4 /* NYTimes_Bestseller.xcdatamodeld in Sources */,

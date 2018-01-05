@@ -16,7 +16,7 @@ class BookListService {
     
      var bestSellerLists = [bookLists]()
     
-    func downloadTravelTimeDataWalk(completed: @escaping CompletionHandler) {
+    func downloadBestSellerBookList(completed: @escaping CompletionHandler) {
         Alamofire.request(URL_GET_BEST_SELLERS_LIST).responseJSON { (response) in
             if ((response.result.value) != nil) {
                 let data = JSON(response.result.value!)
