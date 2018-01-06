@@ -19,7 +19,8 @@ class BookVC: UIViewController {
     var selectedBooks: books!
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        navigationItem.title = selectedBooks.bookName
+        print("hello my headache", BestSellerListName.instance.bestSellerListName)
         bookImage.downloadedFrom(link: selectedBooks.bookImageURL)
         bookTitleLbl.text = selectedBooks.bookName
         authorNameLbl.text = selectedBooks.authorName

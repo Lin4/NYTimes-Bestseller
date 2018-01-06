@@ -20,6 +20,7 @@ class BookCell: UICollectionViewCell {
         bookRankLbl.text = String(book.rank)
         bookWeekOnListLbl.text = String(book.weeksOnList)
     }
+    
 }
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {

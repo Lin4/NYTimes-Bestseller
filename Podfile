@@ -8,5 +8,4 @@ target 'NYTimes Bestseller' do
   # Pods for NYTimes Bestseller
  	pod 'Alamofire'
   	pod 'SwiftyJSON'
-  
 end

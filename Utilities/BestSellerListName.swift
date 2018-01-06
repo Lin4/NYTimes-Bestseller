@@ -9,6 +9,8 @@
 import Foundation
 class BestSellerListName{
     static var instance = BestSellerListName()
-    private init () {}
     var bestSellerListName: String!
+    var URL: String!
+    private init () {}
+    
 }

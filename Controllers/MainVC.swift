@@ -23,7 +23,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     func initBooks() {
         DispatchQueue.main.async {
-            BookListService.instance.downloadBestSellerBookList{_ in
+            BookListService.instance.downloadBestSellerBookList{ (success) in
                 self.tableView.reloadData()
             }
         }
@@ -48,7 +48,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let category = BookListService.instance.bestSellerLists[indexPath.row]
-        BestSellerListName.instance.bestSellerListName = category.bookListName
+            BestSellerListName.instance.bestSellerListName = category.bookListName
             performSegue(withIdentifier: "BookDetailsVC", sender: nil)
     }
     

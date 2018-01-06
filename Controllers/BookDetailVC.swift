@@ -19,23 +19,25 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     var bestSellerList: String!
     var dataSort: String! = "by_week"
     var sortedBookArray: [books]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bookCollection.dataSource = self
         bookCollection.delegate = self
+        
+        let URL = "\(BASE_URL_FOR_DETAILS)\(bestSellerList!)\(URL_ENDPOINT)"
+        BestSellerListName.instance.URL = URL.replacingOccurrences(of: " ", with: "-")
         self.initBooks()
     }
-    
+
     func initBooks() {
         DispatchQueue.main.async {
-            BookDetailService.instance.downloadBestSellerBooks{_ in
+            BookDetailService.instance.downloadBestSellerBooks{ (success) in
                 self.bookCollection.reloadData()
             }
         }
         navigationItem.title = bestSellerList
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return BookDetailService.instance.book.count
        
@@ -51,7 +53,7 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         return BookCell()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let book = BookDetailService.instance.book[indexPath.row]
+        let book = sortedBookArray[indexPath.row]
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let bookVC = mainStoryboard.instantiateViewController(withIdentifier: "bookVC") as! BookVC
         self.navigationController?.pushViewController(bookVC, animated: true)
@@ -69,20 +71,19 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     
     func sortBookArray(dataSort: String) {
         if dataSort == "by_week"{
-         let arraySory = BookDetailService.instance.book
-            sortedBookArray = arraySory.sorted {
+         let arrayBook = BookDetailService.instance.book
+            sortedBookArray = arrayBook.sorted {
             $0.weeksOnList > $1.weeksOnList
             }
         }else if dataSort == "rank"{
-            let arraySory = BookDetailService.instance.book
-            sortedBookArray = arraySory.sorted {
+            let arrayBook = BookDetailService.instance.book
+            sortedBookArray = arrayBook.sorted {
                 $0.rank < $1.rank
             }
     }
 }
     @IBAction func segmentChange(_ sender: AnyObject) {
         attemptFetch()
-        print("LIN", dataSort)
         sortBookArray(dataSort: dataSort)
         bookCollection.reloadData()
         

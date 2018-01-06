@@ -15,7 +15,11 @@ class BookDetailService {
     var book = [books]()
     
     func downloadBestSellerBooks(completed: @escaping CompletionHandler) {
-        Alamofire.request(URL_GET_BEST_SELLERS_LIST_DETAILS).responseJSON { (response) in
+
+        
+        Alamofire.request(BestSellerListName.instance.URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+              self.book = []
+            print("LINGESUEL____NEW", BestSellerListName.instance.URL)
             if ((response.result.value) != nil) {
                 let data = JSON(response.result.value!)
                 let results = data["results"].dictionary
@@ -31,14 +35,16 @@ class BookDetailService {
                         let boolImageURL = bestSellerBooks["book_image"].string
                         let sellerLists = books(bookName: title!, authorName: authorName!, rank: rank, weeksOnList: weeksOnList, description: description!, amazonURL: amazonURL!, reviewURL: reviewURL!, bookImageURL: boolImageURL!)
                         self.book.append(sellerLists)
-                        print("LINGES",sellerLists)
+                        print(self.book)
                     }
-                    print("LINGES",self.book)
                     completed(true)
                 }
                 
+            } else {
+                completed(false)
+                debugPrint(response.result.error as Any)
             }
-            
         }
     }
 }
+
