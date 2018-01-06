@@ -12,19 +12,21 @@ import SwiftyJSON
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        spinner.startAnimating()
         initBooks()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
+
     func initBooks() {
         DispatchQueue.main.async {
             BookListService.instance.downloadBestSellerBookList{ (success) in
                 self.tableView.reloadData()
+                self.spinner.isHidden = true
+                self.spinner.stopAnimating()
             }
         }
     }

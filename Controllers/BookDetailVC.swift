@@ -15,6 +15,7 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
     @IBOutlet weak var bookCollection: UICollectionView!
      @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var bestSellerList: String!
     var dataSort: String! = "by_week"
@@ -23,7 +24,7 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         super.viewDidLoad()
         bookCollection.dataSource = self
         bookCollection.delegate = self
-        
+        spinner.startAnimating()
         let URL = "\(BASE_URL_FOR_DETAILS)\(bestSellerList!)\(URL_ENDPOINT)"
         BestSellerListName.instance.URL = URL.replacingOccurrences(of: " ", with: "-")
         self.initBooks()
@@ -33,6 +34,9 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         DispatchQueue.main.async {
             BookDetailService.instance.downloadBestSellerBooks{ (success) in
                 self.bookCollection.reloadData()
+                self.spinner.isHidden = true
+                self.spinner.stopAnimating()
+                
             }
         }
         navigationItem.title = bestSellerList

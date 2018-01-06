@@ -19,8 +19,7 @@ class BookDetailService {
         
         Alamofire.request(BestSellerListName.instance.URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
               self.book = []
-            print("LINGESUEL____NEW", BestSellerListName.instance.URL)
-            if ((response.result.value) != nil) {
+            guard ((response.result.value) != nil) else { return }
                 let data = JSON(response.result.value!)
                 let results = data["results"].dictionary
                 if let bookArray = results!["books"]?.array {
@@ -35,16 +34,12 @@ class BookDetailService {
                         let boolImageURL = bestSellerBooks["book_image"].string
                         let sellerLists = books(bookName: title!, authorName: authorName!, rank: rank, weeksOnList: weeksOnList, description: description!, amazonURL: amazonURL!, reviewURL: reviewURL!, bookImageURL: boolImageURL!)
                         self.book.append(sellerLists)
-                        print(self.book)
                     }
                     completed(true)
                 }
                 
-            } else {
-                completed(false)
-                debugPrint(response.result.error as Any)
             }
         }
     }
-}
+
 

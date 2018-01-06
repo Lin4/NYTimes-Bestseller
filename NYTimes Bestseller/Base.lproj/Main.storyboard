@@ -54,6 +54,11 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" id="fXL-DG-XlA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="434"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCell" id="nbl-mA-7ag" customClass="BookCell" customModule="NYTimes_Bestseller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="221"/>
@@ -143,6 +148,7 @@
                     <connections>
                         <outlet property="bookCollection" destination="EGc-RZ-eJm" id="KdB-mH-lSS"/>
                         <outlet property="segment" destination="99W-d9-1jW" id="oLi-Oi-q4m"/>
+                        <outlet property="spinner" destination="fXL-DG-XlA" id="avY-6u-AhZ"/>
                         <segue destination="l3K-p1-Vnf" kind="show" identifier="toViewBook" id="rN4-48-Yse"/>
                     </connections>
                 </viewController>
@@ -159,7 +165,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-hH-HC2">
-                                <rect key="frame" x="0.0" y="64" width="320" height="248"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="5vM-sL-oDz"/>
                                 </constraints>
@@ -256,14 +262,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BcA-AM-jAM" firstAttribute="top" secondItem="gdN-Ug-kGo" secondAttribute="bottom" constant="15" id="3DU-X5-nXN"/>
-                            <constraint firstItem="9Ak-hH-HC2" firstAttribute="top" secondItem="eRy-JA-jeZ" secondAttribute="top" id="6NR-mU-goU"/>
+                            <constraint firstItem="9Ak-hH-HC2" firstAttribute="top" secondItem="eRy-JA-jeZ" secondAttribute="top" constant="8" id="6NR-mU-goU"/>
                             <constraint firstItem="gdN-Ug-kGo" firstAttribute="leading" secondItem="eRy-JA-jeZ" secondAttribute="leading" constant="20" id="RhP-Hf-5vr"/>
                             <constraint firstItem="BcA-AM-jAM" firstAttribute="leading" secondItem="eRy-JA-jeZ" secondAttribute="leading" constant="20" id="RlK-PB-ZQG"/>
                             <constraint firstItem="g2a-bx-kEX" firstAttribute="top" secondItem="bc5-E9-JyS" secondAttribute="bottom" id="WY8-oi-TSX"/>
                             <constraint firstItem="bc5-E9-JyS" firstAttribute="leading" secondItem="eRy-JA-jeZ" secondAttribute="leading" constant="8" id="Wgk-Fd-tib"/>
                             <constraint firstItem="gdN-Ug-kGo" firstAttribute="top" secondItem="g2a-bx-kEX" secondAttribute="bottom" constant="10" id="XY0-G8-zvU"/>
                             <constraint firstItem="g2a-bx-kEX" firstAttribute="centerX" secondItem="FmT-VK-6Tc" secondAttribute="centerX" id="hNa-2d-lmA"/>
-                            <constraint firstItem="bc5-E9-JyS" firstAttribute="top" secondItem="9Ak-hH-HC2" secondAttribute="bottom" constant="10" id="nSi-wO-kcg"/>
+                            <constraint firstItem="bc5-E9-JyS" firstAttribute="top" secondItem="9Ak-hH-HC2" secondAttribute="bottom" constant="2" id="nSi-wO-kcg"/>
                             <constraint firstItem="9Ak-hH-HC2" firstAttribute="leading" secondItem="eRy-JA-jeZ" secondAttribute="leading" id="rLH-Tt-uGD"/>
                             <constraint firstItem="eRy-JA-jeZ" firstAttribute="trailing" secondItem="bc5-E9-JyS" secondAttribute="trailing" constant="8" id="rkS-st-L3P"/>
                             <constraint firstItem="eRy-JA-jeZ" firstAttribute="trailing" secondItem="gdN-Ug-kGo" secondAttribute="trailing" constant="20" id="tgp-sm-aVe"/>
@@ -283,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="2314" y="49"/>
         </scene>
-        <!-- BOOK LISTER-->
+        <!-- BEST SELLER BOOK LIST-->
         <scene sceneID="InQ-wt-xM3">
             <objects>
                 <viewController id="6k6-ZP-kWX" customClass="MainVC" customModule="NYTimes_Bestseller" customModuleProvider="target" sceneMemberID="viewController">
@@ -358,18 +364,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="L1G-Lb-oiO">
+                                <rect key="frame" x="141" y="265" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="L1G-Lb-oiO" firstAttribute="centerX" secondItem="XKb-nL-M1K" secondAttribute="centerX" id="1iT-0T-J7R"/>
                             <constraint firstItem="HFo-vl-kJh" firstAttribute="leading" secondItem="TZz-BV-DIa" secondAttribute="leading" id="3VG-SS-Fxn"/>
                             <constraint firstItem="HFo-vl-kJh" firstAttribute="top" secondItem="caM-XW-pVy" secondAttribute="bottom" id="MND-Ja-NUU"/>
                             <constraint firstItem="TZz-BV-DIa" firstAttribute="trailing" secondItem="HFo-vl-kJh" secondAttribute="trailing" id="Z2U-me-jsI"/>
                             <constraint firstItem="nia-5t-OEZ" firstAttribute="top" secondItem="HFo-vl-kJh" secondAttribute="bottom" id="jCN-Gg-Fej"/>
+                            <constraint firstItem="L1G-Lb-oiO" firstAttribute="centerY" secondItem="XKb-nL-M1K" secondAttribute="centerY" id="kjp-gk-dyv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZz-BV-DIa"/>
                     </view>
-                    <navigationItem key="navigationItem" title=" BOOK LISTER" id="AjD-5x-LvU"/>
+                    <navigationItem key="navigationItem" title=" BEST SELLER BOOK LIST" id="AjD-5x-LvU"/>
                     <connections>
+                        <outlet property="spinner" destination="L1G-Lb-oiO" id="xMV-CJ-JVv"/>
                         <outlet property="tableView" destination="HFo-vl-kJh" id="6a8-qC-9Vf"/>
                         <segue destination="39J-LH-Zjl" kind="show" identifier="BookDetailsVC" id="n6C-2G-AxO"/>
                     </connections>

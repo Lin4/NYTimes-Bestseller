@@ -13,14 +13,14 @@ class BookVC: UIViewController {
     @IBOutlet weak var bookTitleLbl: UILabel!
     @IBOutlet weak var authorNameLbl: UILabel!
     @IBOutlet weak var bookDetailDesc: UILabel!
-
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     
  
     var selectedBooks: books!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = selectedBooks.bookName
-        print("hello my headache", BestSellerListName.instance.bestSellerListName)
         bookImage.downloadedFrom(link: selectedBooks.bookImageURL)
         bookTitleLbl.text = selectedBooks.bookName
         authorNameLbl.text = selectedBooks.authorName
