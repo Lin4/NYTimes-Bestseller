@@ -14,18 +14,19 @@ class BookDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
 {
 
     @IBOutlet weak var bookCollection: UICollectionView!
-     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var bestSellerList: String!
     var dataSort: String! = "by_week"
     var sortedBookArray: [books]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bookCollection.dataSource = self
         bookCollection.delegate = self
         spinner.startAnimating()
-        let URL = "\(BASE_URL_FOR_DETAILS)\(bestSellerList!)\(URL_ENDPOINT)"
+        let URL = "\(BASE_URL_FOR_BOOK_DETAILS)\(bestSellerList!)\(URL_ENDPOINT_BOOK_DETAILS)"
         BestSellerListName.instance.URL = URL.replacingOccurrences(of: " ", with: "-")
         self.initBooks()
     }

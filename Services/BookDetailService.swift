@@ -13,16 +13,14 @@ import SwiftyJSON
 class BookDetailService {
     static let instance = BookDetailService()
     var book = [books]()
-    
-    func downloadBestSellerBooks(completed: @escaping CompletionHandler) {
 
-        
+    func downloadBestSellerBooks(completed: @escaping CompletionHandler) {
         Alamofire.request(BestSellerListName.instance.URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
               self.book = []
-            guard ((response.result.value) != nil) else { return }
+            guard ((response.result.value) != nil) else { return}
                 let data = JSON(response.result.value!)
                 let results = data["results"].dictionary
-                if let bookArray = results!["books"]?.array {
+            if let bookArray = results!["books"]?.array {
                     for bestSellerBooks in bookArray {
                         let title = bestSellerBooks["title"].string
                         let authorName = bestSellerBooks["author"].string
@@ -34,12 +32,11 @@ class BookDetailService {
                         let boolImageURL = bestSellerBooks["book_image"].string
                         let sellerLists = books(bookName: title!, authorName: authorName!, rank: rank, weeksOnList: weeksOnList, description: description!, amazonURL: amazonURL!, reviewURL: reviewURL!, bookImageURL: boolImageURL!)
                         self.book.append(sellerLists)
+
                     }
                     completed(true)
                 }
-                
+
             }
         }
     }
-
-

@@ -47,6 +47,7 @@
 		08A999AC1FFE1FDF00A48D8B /* BookListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListService.swift; sourceTree = "<group>"; };
 		08A999AF1FFE208600A48D8B /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		08A999B11FFEBCA800A48D8B /* BookListTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTypeCell.swift; sourceTree = "<group>"; };
+		08B17DBE2002F46100A0EE79 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		3528ACFF326A490F0525A25A /* Pods_NYTimes_Bestseller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimes_Bestseller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7E2FBB4B3279DA9F38E128 /* Pods-NYTimes Bestseller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes Bestseller.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYTimes Bestseller/Pods-NYTimes Bestseller.release.xcconfig"; sourceTree = "<group>"; };
 		D6926E9E1319B441EAEE7337 /* Pods-NYTimes Bestseller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes Bestseller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYTimes Bestseller/Pods-NYTimes Bestseller.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 				082DF14D1FFD58E60025A8D4 /* LaunchScreen.storyboard */,
 				082DF1501FFD58E60025A8D4 /* Info.plist */,
 				082DF1481FFD58E60025A8D4 /* NYTimes_Bestseller.xcdatamodeld */,
+				08B17DBE2002F46100A0EE79 /* readme.txt */,
 			);
 			path = "NYTimes Bestseller";
 			sourceTree = "<group>";
@@ -457,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HV597UH4PF;
 				INFOPLIST_FILE = "NYTimes Bestseller/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.acceka.NYTimes-Bestseller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HV597UH4PF;
 				INFOPLIST_FILE = "NYTimes Bestseller/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.acceka.NYTimes-Bestseller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
