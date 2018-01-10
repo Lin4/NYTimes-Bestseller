@@ -13,9 +13,7 @@ import SwiftyJSON
 class BookListService {
     
     static let instance = BookListService()
-    
      var bestSellerLists = [bookLists]()
-    
     func downloadBestSellerBookList(completed: @escaping CompletionHandler) {
         Alamofire.request(URL_GET_BEST_SELLERS_LIST).responseJSON { (response) in
             if ((response.result.value) != nil) {

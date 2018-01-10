@@ -21,12 +21,13 @@ class BookVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = selectedBooks.bookName
-        bookImage.downloadedFrom(link: selectedBooks.bookImageURL)
         bookTitleLbl.text = selectedBooks.bookName
         authorNameLbl.text = selectedBooks.authorName
         bookDetailDesc.text = selectedBooks.description
-        
+        if let url = selectedBooks.bookImageURL {
+            self.bookImage.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
         }
+    }
     @IBAction func amazonBtnPressed(_ sender: Any) {
         open(scheme: selectedBooks.amazonURL)
     }

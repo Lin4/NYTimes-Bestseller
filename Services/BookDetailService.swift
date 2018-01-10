@@ -20,7 +20,7 @@ class BookDetailService {
             guard ((response.result.value) != nil) else { return}
                 let data = JSON(response.result.value!)
                 let results = data["results"].dictionary
-            if let bookArray = results!["books"]?.array {
+            if let bookArray = results?["books"]?.array {
                     for bestSellerBooks in bookArray {
                         let title = bestSellerBooks["title"].string
                         let authorName = bestSellerBooks["author"].string

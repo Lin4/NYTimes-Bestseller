@@ -19,6 +19,7 @@
 		082DF14C1FFD58E60025A8D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082DF14B1FFD58E60025A8D4 /* Assets.xcassets */; };
 		082DF14F1FFD58E60025A8D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082DF14D1FFD58E60025A8D4 /* LaunchScreen.storyboard */; };
 		082DF17B1FFD8B780025A8D4 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082DF17A1FFD8B780025A8D4 /* MaterialView.swift */; };
+		0834094C200679BC00D09063 /* imageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0834094B200679BC00D09063 /* imageServices.swift */; };
 		08A999A91FFE08F800A48D8B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999A81FFE08F800A48D8B /* Constants.swift */; };
 		08A999AB1FFE195F00A48D8B /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999AA1FFE195F00A48D8B /* BookDetailVC.swift */; };
 		08A999AD1FFE1FDF00A48D8B /* BookListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A999AC1FFE1FDF00A48D8B /* BookListService.swift */; };
@@ -42,6 +43,7 @@
 		082DF14E1FFD58E60025A8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082DF1501FFD58E60025A8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		082DF17A1FFD8B780025A8D4 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		0834094B200679BC00D09063 /* imageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageServices.swift; sourceTree = "<group>"; };
 		08A999A81FFE08F800A48D8B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		08A999AA1FFE195F00A48D8B /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
 		08A999AC1FFE1FDF00A48D8B /* BookListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListService.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				08A999AC1FFE1FDF00A48D8B /* BookListService.swift */,
 				082CBE2D1FFF294C005DBF16 /* BookDetailService.swift */,
+				0834094B200679BC00D09063 /* imageServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				08A999AD1FFE1FDF00A48D8B /* BookListService.swift in Sources */,
 				08A999B21FFEBCA800A48D8B /* BookListTypeCell.swift in Sources */,
 				082DF17B1FFD8B780025A8D4 /* MaterialView.swift in Sources */,
+				0834094C200679BC00D09063 /* imageServices.swift in Sources */,
 				082CBE381FFF7300005DBF16 /* BookVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HV597UH4PF;
 				INFOPLIST_FILE = "NYTimes Bestseller/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.acceka.NYTimes-Bestseller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HV597UH4PF;
 				INFOPLIST_FILE = "NYTimes Bestseller/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.acceka.NYTimes-Bestseller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
